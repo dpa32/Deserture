@@ -23,7 +23,7 @@ public class SequenceNode : CompositeNode
                 return INode.STATE.FAILURE;
             }
             Debug.Log($"{_children[_currentChild]} : SUC");
-            _currentChild++; // SUCCESSÀÏ °æ¿ì
+            _currentChild++; // SUCCESSÅ”ÄŽ Â°Ä‡Å¼Ä›
         }
         _currentChild = 0;
         return INode.STATE.SUCCESS;
