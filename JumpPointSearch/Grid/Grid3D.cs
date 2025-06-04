@@ -6,7 +6,7 @@ public class Grid3D
 {
     public int ViewRange = 2;
     private Dictionary<Vector3Int, GridChunk> _chunks = new();
-    private Dictionary<Vector3Int, GridChunk> _vairableChunks; // ÀÌ°Å ½á¾ßµÇ 
+    private Dictionary<Vector3Int, GridChunk> _vairableChunks; // ì´ê±° ì¨ì•¼ë˜ 
     private Vector3Int _chunkSize;
 
     private Func<Vector3, bool> _isWalkablePredicate;
@@ -17,11 +17,11 @@ public class Grid3D
         _isWalkablePredicate = isWalkablePredicate ?? (_ => true);
     }
 
-    public GridChunk GetChunk(Vector3 worldPos) // vector°¡ ¼ÓÇÑ chunk 
+    public GridChunk GetChunk(Vector3 worldPos) // vectorê°€ ì†í•œ chunk 
     {
         Vector3Int chunkPos = GetChunkIndex(worldPos);
 
-        if (!_chunks.TryGetValue(chunkPos, out var chunk)) // chunk°¡ ¾ø´Ù¸é »ı¼º
+        if (!_chunks.TryGetValue(chunkPos, out var chunk)) // chunkê°€ ì—†ë‹¤ë©´ ìƒì„±
         {
             chunk = new GridChunk(chunkPos, _chunkSize);
             chunk.Initialize(_isWalkablePredicate);
@@ -37,7 +37,7 @@ public class Grid3D
         return chunk?.GetNode(worldPos);
     }
 
-    private Vector3Int GetChunkIndex(Vector3 worldPos) // worldPos°¡ ¼ÓÇÑ Ã»Å©ÀÇ ÀÎµ¦½º
+    private Vector3Int GetChunkIndex(Vector3 worldPos) // worldPosê°€ ì†í•œ ì²­í¬ì˜ ì¸ë±ìŠ¤
     {
         return new Vector3Int(
             Mathf.FloorToInt(worldPos.x / _chunkSize.x),
