@@ -22,7 +22,7 @@ public class SelectorNode : CompositeNode
                 _currentChild = 0;
                 return INode.STATE.SUCCESS;
             }
-            _currentChild++; // FAILUREÀÏ °æ¿ì
+            _currentChild++; // FAILUREÅ”ÄŽ Â°Ä‡Å¼Ä›
         }
         _currentChild = 0;
         return INode.STATE.FAILURE;
