@@ -241,8 +241,8 @@ public class PathFinder
     {
         foreach (var pDir in GetPerpendiculars(dir))
         {
-            var nextPos = pos + pDir; // ¼öÁ÷¹æÇâ ÀÌµ¿ ³ëµå
-            var diagonPos = pos + pDir + dir; // ´ë°¢¼± ¹æÇâ ÀÌµ¿ ³ëµå
+            var nextPos = pos + pDir; // ìˆ˜ì§ë°©í–¥ ì´ë™ ë…¸ë“œ
+            var diagonPos = pos + pDir + dir; // ëŒ€ê°ì„  ë°©í–¥ ì´ë™ ë…¸ë“œ
             if (_grid.GetNode(nextPos)?.IsWalkable ?? false)
             {
                 if (!_grid.GetNode(diagonPos)?.IsWalkable ?? true)
@@ -255,7 +255,7 @@ public class PathFinder
     }
 
     private bool IsDiagonal(Vector3Int dir) => 
-        Mathf.Abs(dir.x) + Mathf.Abs(dir.y) + Mathf.Abs(dir.z) > 1; // ÃàÀÌ µÎ °³ ÀÌ»óÀÎÁö È®ÀÎ
+        Mathf.Abs(dir.x) + Mathf.Abs(dir.y) + Mathf.Abs(dir.z) > 1; // ì¶•ì´ ë‘ ê°œ ì´ìƒì¸ì§€ í™•ì¸
 
     private List<Vector3Int> GetAxes(Vector3Int dir) => new() {
         new Vector3Int(dir.x, 0, 0), new Vector3Int(0, dir.y, 0), new Vector3Int(0, 0, dir.z)
